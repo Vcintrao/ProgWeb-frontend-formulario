@@ -2,37 +2,89 @@
 <html>
     <head>
         <title>
-            Aula 11
+            Aula 11 - Formulário
         </title>
         <meta charset="UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="css/estilo.css" />
         <script src="js/functions.js"></script>
     </head>
     <body>
-        <h2>Padrão REST</h2>
-        <a href="javascript:callFetchWithGet()">Get</a>
-        <a href="javascript:callFetchWithPost('Rafa Yoko')">Post</a>
-        <a href="javascript:callFetchWithPut(3,'Tafs')">Put</a>
-        <a href="javascript:callFetchWithDelete(4)">Delete</a>
-        <p id = "json"> </p>
+        <header>
+            <h1>Um pouco sobre a dupla...</h1>
+        </header>
+    <h2>Padrão REST</h2>
+    <a href="javascript:callFetchWithGet()">Get</a>
+    <p id = "json"> </p>
 
+    <section class="post">    
         <h2>Formulário (post)</h2>
         <form id="postForm">
-            <label for="mensagem">Mensagem:</label>
-            <input type="text" id="mensagem" name="mensagem"/>
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome"/>
             <button type="submit" onclick="return submitPost()">Submit</button>
+        </div>
+        <div>
+            <label for="apelido">Apelido:</label>
+            <input type="text" id="apelido" name="apelido"/>
+            <button type="submit" onclick="return submitPost()">Submit</button>
+        </div>
+        <div>
+            <label for="aniversario">Aniversário:</label>
+            <input type="text" id="aniversario" name="aniversario"/>
+            <button type="submit" onclick="return submitPost()">Submit</button>
+        </div>
+        <div>
+            <label for="matfav">Matéria favorita:</label>
+            <input type="text" id="matfav" name="matfav"/>
+            <button type="submit" onclick="return submitPost()">Submit</button>
+        </div>
+        <div>
+            <label for="jogo">Jogo favorito:</label>
+            <input type="text" id="jogo" name="jogo"/>
+            <button type="submit" onclick="return submitPost()">Submit</button>
+        </div>
         </form>
+    </section>
 
+    <section class="put">
         <h2>Formulário (put)</h2>
         <form id="putForm">
-            <label>Id:<input type="text" name="id"/></label>
-            <label>Mensagem:<input type="text" name="mensagem"/></label>
-            <button type="submit" onclick="return submitPut()">Submit</button>
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome"/>
+                <button type="submit" onclick="return submitPost()">Submit</button>
+            </div>
+            <div>
+                <label for="apelido">Apelido:</label>
+                <input type="text" id="apelido" name="apelido"/>
+                <button type="submit" onclick="return submitPost()">Submit</button>
+            </div>
+            <div>
+                <label for="aniversario">Aniversário:</label>
+                <input type="text" id="aniversario" name="aniversario"/>
+                <button type="submit" onclick="return submitPost()">Submit</button>
+            </div>
+            <div>
+                <label for="matfav">Matéria favorita:</label>
+                <input type="text" id="matfav" name="matfav"/>
+                <button type="submit" onclick="return submitPost()">Submit</button>
+            </div>
+            <div>
+                <label for="jogo">Jogo favorito:</label>
+                <input type="text" id="jogo" name="jogo"/>
+                <button type="submit" onclick="return submitPost()">Submit</button>
+            </div>
         </form>
+    </section>
 
+    <section class="delete">
         <h2>Formulário (delete)</h2>
         <form id="deleteForm">
             <label>Id:<input type="text" name="id"/></label>
             <button type="submit" onclick="return submitDelete()">Submit</button>
         </form>
+    </section>
+
     </body>
 </html>
