@@ -51,26 +51,24 @@
             <div>
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome"/>
-                <button type="submit" onclick="return submitPost()">Submit</button>
             </div>
             <div>
                 <label for="apelido">Apelido:</label>
                 <input type="text" id="apelido" name="apelido"/>
-                <button type="submit" onclick="return submitPost()">Submit</button>
             </div>
             <div>
                 <label for="aniversario">Aniversário:</label>
                 <input type="text" id="aniversario" name="aniversario"/>
-                <button type="submit" onclick="return submitPost()">Submit</button>
             </div>
             <div>
                 <label for="matfav">Matéria favorita:</label>
                 <input type="text" id="matfav" name="matfav"/>
-                <button type="submit" onclick="return submitPost()">Submit</button>
             </div>
             <div>
                 <label for="jogo">Jogo favorito:</label>
                 <input type="text" id="jogo" name="jogo"/>
+            </div>
+            <div>
                 <button type="submit" onclick="return submitPost()">Submit</button>
             </div>
         </form>
@@ -79,8 +77,12 @@
     <section class="delete">
         <h2>Formulário (delete)</h2>
         <form id="deleteForm">
-            <label>Id:<input type="text" name="id"/></label>
-            <button type="submit" onclick="return submitDelete()">Submit</button>
+            <div>
+                <label>Id:<input type="text" name="id"/></label>
+            </div>
+            <div>
+                <button type="submit" onclick="return submitDelete()">Submit</button>
+            </div>
         </form>
     </section>
 
