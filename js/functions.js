@@ -43,14 +43,24 @@ async function callFetchWithPut(id, novaMensagem){
             'Accept' : 'application/json',
             'content-type' : 'application/json'
         },
+        body:JSON.stringify({
+            "mensagem" : novaMensagem
+        })
     }
+    await fetch(`${url}${id}`, options);
+    
 }
 
-async function callFetchWithDelete(){
+async function callFetchWithDelete(id){
     let headers = new Headers();
     const options={
-        method : 'GET',
+        method : 'DELETE',
         mode: 'cors',
-        headers: headers,
+        headers: {
+            'Accept' : 'application/json',
+            'content-type' : 'application/json'
+
+        }
     }
+    await fetch(`${url}${id}`, options);
 }
