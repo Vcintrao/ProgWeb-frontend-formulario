@@ -18,59 +18,22 @@ async function callFetchWithGet(){
      }
 }
 
-async function callFetchWithPost(mensagem){
-    let headers = new Headers();
-    const options={
-        method : 'POST',
-        mode: 'cors',
-        headers: {
-            'Accept' : 'application/json',
-            'content-type' : 'application/json'
-        },
-        body:JSON.stringify({
-            "mensagem" : mensagem
-        })
-    }
-    await fetch(url, options);
-}
-
-async function callFetchWithPut(id, novaMensagem){
-    let headers = new Headers();
-    const options={
-        method : 'PUT',
-        mode: 'cors',
-        headers: {
-            'Accept' : 'application/json',
-            'content-type' : 'application/json'
-        },
-        body:JSON.stringify({
-            "mensagem" : novaMensagem
-        })
-    }
-    await fetch(`${url}${id}`, options);
-    
-}
-
-async function callFetchWithDelete(id){
-    let headers = new Headers();
-    const options={
-        method : 'DELETE',
-        mode: 'cors',
-        headers: {
-            'Accept' : 'application/json',
-            'content-type' : 'application/json'
-
-        }
-    }
-    await fetch(`${url}${id}`, options);
-}
-
 /*Formulários*/
 
 function submitPost(){
     const form =  document.forms['postForm'];
-    const mensagem = form["mensagem"].value;
-    callFetchWithPost(mensagem);
+    const nome = form["nome"].value;
+    const apelido = form["apelido"].value;
+    const aniversario = form["aniversario"].value;
+    const matfav = form["matfav"].value;
+    const jogo = form["jogo"].value;
+    
+    const novo = 
+        {
+           "nome": nome, "apelido": apelido, "aniversario": aniversario, "materia_favorita": matfav, "jogo": jogo
+        };
+    
+    callFetchWithPost(novo);
     return false;//evita o reload da tela
 }
 
