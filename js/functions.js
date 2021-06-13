@@ -3,9 +3,9 @@ let url = "https://tt905-2021-mensagens-vitor.herokuapp.com/mensagens/"
 async function callFetchWithGet(){
      let headers = new Headers();
      const options={
-         method : 'GET',
+         method : 'Get',
          mode: 'cors',
-         headers: headers,
+         headers: headers
      }
      const output = document.getElementById("json");
      const response = await fetch(url, options);
@@ -37,6 +37,39 @@ async function callFetchWithPost(nome, apelido, aniversario, materia_favorita, j
     await fetch(url,options);
     console.log("Funcionou!");
 }
+
+async function callFetchWithPut(id, nome, apelido, aniversario, materia_favorita, jogo){
+    const options = {
+        method : 'Put',
+        mode: 'cors',
+        headers: {
+            'Accept':'application/json',
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify({
+            'Nome':nome,
+            'Apelido':apelido,
+            'Aniversário':aniversario,
+            'Matéria favorita':materia_favorita,
+            'Jogo favorito':jogo
+
+        })
+    }   
+  await fetch(`${url}${id}`, options);
+}
+
+async function callFetchWithDelete(id){
+    const options = {
+        method : 'Delete',
+        mode: 'cors',
+        headers: {
+            'Accept':'application/json',
+            'content-type' : 'application/json'
+        }
+    }   
+  await fetch(`${url}${id}`, options);
+}
+
 /*Formulários*/
 
 function submitPost(){
@@ -54,8 +87,12 @@ function submitPost(){
 function submitPut(){
     const form =  document.forms['putForm'];
     const id = form["id"].value;
-    const mensagem = form["mensagem"].value;
-    callFetchWithPut(id, mensagem);
+    const nome = form["nome"].value;
+    const apelido = form["apelido"].value;
+    const aniversario = form["aniversario"].value;
+    const materia_favorita = form["materia_favorita"].value;
+    const jogo = form["jogo"].value;
+    callFetchWithPut(id, nome, apelido, aniversario, materia_favorita, jogo);
     return false;//evita o reload da tela
 }
 
