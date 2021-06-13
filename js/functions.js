@@ -38,7 +38,7 @@ async function callFetchWithPost(nome, apelido, aniversario, materia_favorita, j
     console.log("Funcionou!");
 }
 
-async function callFetchWithPut(id, nome, apelido, aniversario, materia_favorita, jogo){
+async function callFetchWithPut(id, novonome, novoapelido, novoaniversario, novomateria_favorita, novojogo){
     const options = {
         method : 'Put',
         mode: 'cors',
@@ -47,11 +47,11 @@ async function callFetchWithPut(id, nome, apelido, aniversario, materia_favorita
             'content-type' : 'application/json'
         },
         body: JSON.stringify({
-            'Nome':nome,
-            'Apelido':apelido,
-            'Aniversário':aniversario,
-            'Matéria favorita':materia_favorita,
-            'Jogo favorito':jogo
+            'Nome':novonome,
+            'Apelido':novoapelido,
+            'Aniversário':novoaniversario,
+            'Matéria favorita':novomateria_favorita,
+            'Jogo favorito':novojogo
 
         })
     }   
