@@ -18,6 +18,24 @@ async function callFetchWithGet(){
      }
 }
 
+async function callFetchWithPost(nome, apelido, aniversario, materia_favorita, jogo){
+    const options = {
+        method : 'Post',
+        mode: 'cors',
+        headers:{
+            'Accept':'application/json',
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify({
+            'Nome':nome,
+            'Apelido':apelido,
+            'Aniversário':aniversario,
+            'Matéria favorita':materia_favorita,
+            'Jogo favorito':jogo
+        })
+    } 
+    await fetch(url,options);
+}
 /*Formulários*/
 
 function submitPost(){
@@ -25,15 +43,10 @@ function submitPost(){
     const nome = form["nome"].value;
     const apelido = form["apelido"].value;
     const aniversario = form["aniversario"].value;
-    const matfav = form["matfav"].value;
+    const materia_favorita = form["materia_favorita"].value;
     const jogo = form["jogo"].value;
     
-    const novo = 
-        {
-           "nome": nome, "apelido": apelido, "aniversario": aniversario, "materia_favorita": matfav, "jogo": jogo
-        };
-    
-    callFetchWithPost(novo);
+    callFetchWithPost(nome, apelido, aniversario, materia_favorita, jogo);
     return false;//evita o reload da tela
 }
 
