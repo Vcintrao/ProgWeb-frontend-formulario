@@ -35,6 +35,7 @@ async function callFetchWithPost(nome, apelido, aniversario, materia_favorita, j
         })
     } 
     await fetch(url,options);
+    console.log("Funcionou!");
 }
 /*Formulários*/
 
