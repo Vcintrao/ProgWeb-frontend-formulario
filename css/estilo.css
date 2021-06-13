@@ -70,16 +70,7 @@ a{
     margin: 1px 7px 7px 1px;
     padding: 4px;
 }
-
-a:visited{
-    background-color: teal;
-    color: wheat;
-}
 a:hover{
     background-color: darkslategrey;
     color: teal;
-}
-a:focus{
-    background-color: wheat;
-    color:tomato;
 }
